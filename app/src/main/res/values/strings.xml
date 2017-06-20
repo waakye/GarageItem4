@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">GarageItem</string>
+
+    <!-- activity_catalog.xml strings -->
+    <string name="add_a_used_item">Add a Used Item</string>
+
+    <string name="category_overview">Overview</string>
+    <string name="category_price">Price</string>
+    <string name="category_quantity">Quantity</string>
+    <string name="category_image">Image</string>
+
+    <string name="add_image_button">Add Image</string>
+
+    <string name="image_preview">Image Preview Here</string>
+
+    <!-- menu_catalog.xml strings -->
+    <string name="action_insert_dummy_data">Insert Dummy Data</string>
+    <string name="action_delete_all_entries">Delete All Entries</string>
+
+    <!-- activity_editor.xml strings -->
+    <string name="editor_activity_title_new_used_item">Add a Used Item</string>
+
+    <string name="hint_used_item_name">Item Name</string>
+    <string name="hint_used_item_description">Item Description</string>
+    <string name="hint_used_item_price">Suggested Price</string>
+    <string name="hint_used_item_quantity">Number Available</string>
+
+
+    <!-- menu_editor.xml strings -->
+    <!-- Label for editor menu option to save used item and leave editor -->
+    <string name="action_save">Save</string>
+
+    <!-- Label for editor overflow menu option that deletes the current used item -->
+    <string name="action_delete">Delete</string>
+
+</resources>
