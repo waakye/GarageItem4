@@ -104,16 +104,47 @@ public class CatalogActivity extends AppCompatActivity {
                 null,                                       // Don't filter by row groups
                 null);                                      // The sort order
 
+
+        // TODO: Need a projection for the current quantity of a specific used_item
+        // Define a projection that specifies only the name column from the database
+        String[] projectionSpecific = {
+                UsedItemContract.UsedItemEntry._ID,
+                UsedItemContract.UsedItemEntry.COLUMN_USED_ITEM_NAME,
+                UsedItemContract.UsedItemEntry.COLUMN_USED_ITEM_PRICE,
+                UsedItemContract.UsedItemEntry.COLUMN_USED_ITEM_QUANTITY,
+                UsedItemContract.UsedItemEntry.COLUMN_USED_ITEM_IMAGE_URI};
+
+        String[] whereArgs = new String[] {"Used Socks"};
+
+        // Perform a query on the used_items table
+        Cursor cursorSpecific = db.query(
+                UsedItemContract.UsedItemEntry.TABLE_NAME,  // The table to query
+                projectionSpecific,                         // The columns to return
+                UsedItemContract.UsedItemEntry.COLUMN_USED_ITEM_NAME, // The columns for the WHERE clause
+                whereArgs,                                  // The values for the WHERE clause
+                null,                                       // Don't group the rows
+                null,
+                null);
+
+//        try {
+//            // Display the number of rows in the Cursor (which reflects the number of rows in the
+//            // used_items_inventory table in the database).
+//            TextView displayView = (TextView)findViewById(R.id.text_view_used_item);
+//            displayView.setText("Number of rows in the used items inventory database table: "
+//                + cursor.getCount());
+//        } finally {
+//            // Always close the cursor when you're done reading from it.  This releases all resources
+//            // and makes it invalid
+//            cursor.close();
+//        }
+
         try {
-            // Display the number of rows in the Cursor (which reflects the number of rows in the
-            // used_items_inventory table in the database).
-            TextView displayView = (TextView)findViewById(R.id.text_view_used_item);
-            displayView.setText("Number of rows in the used items inventory database table: "
-                + cursor.getCount());
+            // Display the number of rows in the Cursor
+            TextView displayView1 = (TextView)findViewById(R.id.text_view_specific_used_item);
+            displayView1.setText("Number of rows in the used items inventory db table: "
+                    + cursorSpecific.getCount());
         } finally {
-            // Always close the cursor when you're done reading from it.  This releases all resources
-            // and makes it invalid
-            cursor.close();
+            cursorSpecific.close();
         }
     }
 
