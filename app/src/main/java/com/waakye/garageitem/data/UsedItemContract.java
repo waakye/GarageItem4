@@ -19,7 +19,7 @@ public final class UsedItemContract {
     public static final class UsedItemEntry implements BaseColumns {
 
         /** Name of database table for used items */
-        public final static String TABLE_NAME = "garage_inventory";
+        public final static String TABLE_NAME = "used_items_inventory";
 
         /**
          * Unique ID number for the used_item (only for use in the database table)
